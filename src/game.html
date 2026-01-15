@@ -4,9 +4,88 @@
 		<title>Puissance 4</title>
 	</head>
 
-	<script src="./libs/index.ts" type="module"></script>
+	<script async defer src="./libs/index.ts" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@hiseb/confetti@2.1.0/dist/confetti.min.js"></script>
+    <link rel="stylesheet" href="./css/app.css" />
 
 	<body>
-		<div id="app"></div>
+		<div class="app">
+            <h1 class="logo">CONNECT 4</h1>
+            <div class="game">
+                <div class="board">
+                    <h2>Current Player:</h2>    
+                    <table>
+                        <tr>
+                            <td data-column="0"></td>
+                            <td data-column="1"></td>
+                            <td data-column="2"></td>
+                            <td data-column="3"></td>
+                            <td data-column="4"></td>
+                            <td data-column="5"></td>
+                            <td data-column="6"></td>
+                        </tr>
+                        <tr>
+                            <td data-column="0"></td>
+                            <td data-column="1"></td>
+                            <td data-column="2"></td>
+                            <td data-column="3"></td>
+                            <td data-column="4"></td>
+                            <td data-column="5"></td>
+                            <td data-column="6"></td>
+                        </tr>
+                        <tr>
+                            <td data-column="0"></td>
+                            <td data-column="1"></td>
+                            <td data-column="2"></td>
+                            <td data-column="3"></td>
+                            <td data-column="4"></td>
+                            <td data-column="5"></td>
+                            <td data-column="6"></td>
+                        </tr>
+                        <tr>
+                            <td data-column="0"></td>
+                            <td data-column="1"></td>
+                            <td data-column="2"></td>
+                            <td data-column="3"></td>
+                            <td data-column="4"></td>
+                            <td data-column="5"></td>
+                            <td data-column="6"></td>
+                        </tr>
+                        <tr>
+                            <td data-column="0"></td>
+                            <td data-column="1"></td>
+                            <td data-column="2"></td>
+                            <td data-column="3"></td>
+                            <td data-column="4"></td>
+                            <td data-column="5"></td>
+                            <td data-column="6"></td>
+                        </tr>
+                        <tr>
+                            <td data-column="0"></td>
+                            <td data-column="1"></td>
+                            <td data-column="2"></td>
+                            <td data-column="3"></td>
+                            <td data-column="4"></td>
+                            <td data-column="5"></td>
+                            <td data-column="6"></td>
+                        </tr>
+                        <tr>
+                            <td data-column="0"></td>
+                            <td data-column="1"></td>
+                            <td data-column="2"></td>
+                            <td data-column="3"></td>
+                            <td data-column="4"></td>
+                            <td data-column="5"></td>
+                            <td data-column="6"></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="history">
+                    <h2>History :</h2>
+                    <ul class="historyList">
+                    </ul>
+                </div>
+            </div>
+        </div>
 	</body>
 </html>

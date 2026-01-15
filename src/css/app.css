@@ -6,6 +6,8 @@ body{
     padding: 20px;
 }
 
+/* HOMEPAGE STYLES */
+
 .logo {
     font-size: 48px;
     color: #333;
@@ -41,4 +43,48 @@ body{
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s ease;
+}
+
+.startBtn:hover {
+    background-color: #555;
+}
+
+/* GAME PAGE STYLES */
+.app {
+    max-width: 600px;
+    margin: 0 auto;
+}  
+
+h2{
+    color: #333;
+    text-align: left;
+}
+
+.game{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+}
+
+.board{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.game .board table{
+    border-collapse: collapse;
+}
+.game .board td{
+    width: 60px;
+    height: 60px;
+    border: 2px solid #333;
+    background-color: #fff;
+    cursor: pointer;
+    position: relative;
+}
+.game .board td:hover{
+    background-color: #f0f0f0;
 }
