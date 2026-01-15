@@ -1,9 +1,9 @@
 console.log("./libs/index.ts loaded");
 
 interface Turn {
-	id: string;
+	id?: string;
 	player: string;
-	y: number;
+	x: number;
 }
 
 type Player = "red" | "yellow";
@@ -23,6 +23,10 @@ class Game {
 			.map(() => Array(7).fill(null));
 	}
 
+	public getPlayer() {
+		return this.player;
+	}
+
 	public getTurns() {
 		return this.turns;
 	}
@@ -33,7 +37,7 @@ class Game {
 	}
 
 	public play(col: number) {
-		const row = this.getLowestCol(col);
+		const row = this.getLowestRow(col);
 
 		// col is already full
 		if (row === -1) {
@@ -42,18 +46,17 @@ class Game {
 
 		this.state[row]![col] = this.player;
 
-		const newTurn: Turn = {
+		const turn: Turn = {
 			player: this.player,
-			col: col,
-			row: row,
+			x: col,
 		};
-		this.turns.push(newTurn);
+		this.turns.push(turn);
 
 		this.board.colors(row, col, this.player);
 		this.switch();
 	}
 
-	private getLowestCol(col: number): number {
+	private getLowestRow(col: number): number {
 		for (let r = this.state.length - 1; r >= 0; r--) {
 			if (this.state[r]![col] === null) {
 				return r;
@@ -71,7 +74,7 @@ class Board {
 	private col: number = 7;
 	private row: number = 6;
 
-	private id: string = "game";
+	private id: string = "app";
 
 	public getId() {
 		return this.id;
@@ -99,6 +102,7 @@ class Board {
 		container.appendChild(table);
 	}
 
+	// add color to a used cell
 	public colors(row: number, col: number, player: Player) {
 		const table = document.querySelector(
 			`#${this.id} table`,
@@ -111,3 +115,17 @@ class Board {
 		}
 	}
 }
+
+const board = new Board();
+board.build();
+const game = new Game(board);
+const container = document.getElementById(board.getId());
+
+container?.addEventListener("click", (e: Event) => {
+	const target = e.target as HTMLElement;
+
+	if (target.tagName === "TD") {
+		const col = parseInt(target.dataset.col || "0");
+		game.play(col);
+	}
+});
