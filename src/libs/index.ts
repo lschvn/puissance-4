@@ -54,7 +54,7 @@ class API {
 		return res.json();
 	}
 
-	async turn(gid: string, player: Player, x: number) {
+	async turn(gid: string, player: string, x: number) {
 		const res = await fetch(this.url + endpoints.TURN.url, {
 			method: endpoints.TURN.method,
 			headers: { "Content-Type": "application/json" },
@@ -135,7 +135,8 @@ class Game {
 		this.board.colors(row, col, this.player);
 
 		// call api before the switch player
-		api.turn(this.gid, this.player, col);
+		// urgent fix
+		api.turn(this.gid, this.player === "red" ? "p1" : "p2", col);
 
 		this.switch();
 		console.log(

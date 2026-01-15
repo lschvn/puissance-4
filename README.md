@@ -17,17 +17,18 @@ bun ./**/*.html
 ## Structure du projet
 
 ```
-assets/
+
+src/
+	index.html
+	game.html
+	history.html
+	replay.html
+	assets/
 	css/
 		app.css
 	img/
 libs/
 	index.ts
-public/
-	index.html
-	game.html
-	history.html
-	replay.html
 main.ts
 README.md
 ```
