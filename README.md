@@ -11,7 +11,7 @@ bun install
 
 Lancer le projet en développement
 ```
-bun --hot run main.ts
+bun ./**/*.html
 ```
 
 ## Structure du projet
