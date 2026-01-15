@@ -4,6 +4,9 @@
   "workspaces": {
     "": {
       "name": "puissance4",
+      "dependencies": {
+        "@hiseb/confetti": "^2.1.0",
+      },
       "devDependencies": {
         "@types/bun": "latest",
       },
@@ -13,6 +16,8 @@
     },
   },
   "packages": {
+    "@hiseb/confetti": ["@hiseb/confetti@2.1.0", "", {}, "sha512-yPalKd34NfmEsUTXj3ZrlNtj1J21WgoocDs8+92W/Quzl2j5ECuxX5L0jQp16tgvp+uIYdeNAmizP1WPyt5hfQ=="],
+
     "@types/bun": ["@types/bun@1.3.6", "", { "dependencies": { "bun-types": "1.3.6" } }, "sha512-uWCv6FO/8LcpREhenN1d1b6fcspAB+cefwD7uti8C8VffIv0Um08TKMn98FynpTiU38+y2dUO55T11NgDt8VAA=="],
 
     "@types/node": ["@types/node@25.0.8", "", { "dependencies": { "undici-types": "~7.16.0" } }, "sha512-powIePYMmC3ibL0UJ2i2s0WIbq6cg6UyVFQxSCpaPxxzAaziRfimGivjdF943sSGV6RADVbk0Nvlm5P/FB44Zg=="],
